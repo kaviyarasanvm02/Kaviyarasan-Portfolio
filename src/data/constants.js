@@ -17,7 +17,7 @@ export const Bio = {
        "As a Full Stack Developer with 1 years of hands-on experience, I specialize in JavaScript technologies, adept at customizing development environments and solving intricate technical challenges. At Cotyledon Technologies Pvt Ltd, I focused on product development and deployment, fueled by a strong passion for JavaScript and its frameworks. Skilled in both back-end and front-end aspects, I excel in team management and possess broad knowledge of developing and deploying web applications from scratch.",
     github: "https://github.com/kaviyarasanvm02",
     resume:
-    "https://drive.google.com/file/d/1-ZUy3EXXu0QeJXM1L70VIxpTZYjJqJZA/view?usp=drive_link",
+    "https://drive.google.com/file/d/1LOyK2OKFRe7Ywx6vZO4YdGNhrguMlWM5/view?usp=drive_link",
     linkedin: "https://www.linkedin.com/in/kaviyarasan-v-230287301/",
     X: "https://x.com/MassKavi5",
     instagram: "https://instagram.com/kaviyarasan.vm/",
