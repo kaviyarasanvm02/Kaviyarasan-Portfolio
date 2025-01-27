@@ -13,6 +13,7 @@ import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ScrollToTopButton from "./components/Footer/ScrollTopBtn";
 import ProjectDetails from "./components/ProjectDetails";
 
 const Body = styled.div`
@@ -57,6 +58,7 @@ function App() {
           <Contact />
         </Wrapper>
         <Footer />
+        <ScrollToTopButton /> 
         {openModal.state && (
               <ProjectDetails
                 openModal={openModal}
