@@ -1,7 +1,8 @@
-import { Snackbar } from "@mui/material";
-import React, { useRef } from "react";
+import { Snackbar, Alert } from "@mui/material";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -128,7 +129,7 @@ const ContactButton = styled.input`
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition effect */
+  transition: background-color 0.3s ease;
   &:hover {
     background: linear-gradient(
       225deg,
@@ -137,49 +138,53 @@ const ContactButton = styled.input`
     );
   }
 `;
+
 const Contact = () => {
-    const [open,setOpen] = React.useState(false);
-    const form = useRef();
+  const [open, setOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
+  const form = useRef();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        try {
-            await emailjs.sendForm(
-                "service_63rmbph",
-                "template_86d2k5s",
-                form.current,
-                "eI8mGbYvQvsrTkSggs"
-            );
-            setOpen(true);
-            form.current.reset();
-        } catch (error) {
-            setOpen(true);
-            console.error("Error sending email:", error);
-        }
+    try {
+      await emailjs.sendForm(
+        "service_63rmbph",
+        "template_86d2k5s",
+        form.current,
+        "vt_M5x9Rq2KkUlnmG"
+      );
+      setSnackbarMessage("Email sent successfully!");
+      setSnackbarSeverity("success");
+      setOpen(true);
+      form.current.reset();
+    } catch (error) {
+      setSnackbarMessage("Failed to send email. Please try again.");
+      setSnackbarSeverity("error");
+      setOpen(true);
+      console.error("Error sending email:", error);
     }
+  };
+
   return (
     <Container>
       <Wrapper>
         <Title>Contact</Title>
-        <Desc>
-          Feel free to reach out to me for any questions or opportunities!
-        </Desc>
-        <ContactForm ref={form} onsubmit={handleSubmit}>
+        <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
+        <ContactForm ref={form} onSubmit={handleSubmit}>
           <ContactTitle>Email Me 🚀</ContactTitle>
-          <ContactInput placeholder="Your Email" name="from_email" />
-          <ContactInput placeholder="Your Name" name="from_name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
+          <ContactInput placeholder="Your Email" name="from_email" required />
+          <ContactInput placeholder="Your Name" name="from_name" required />
+          <ContactInput placeholder="Subject" name="subject" required />
+          <ContactInputMessage placeholder="Message" rows="4" name="message" required />
           <ContactButton type="submit" value="Send" />
         </ContactForm>
-        <Snackbar
-          open={open}
-          autoHideDuration={6000}
-          onClose={() => setOpen(false)}
-          message={open ? "Email sent successfully!" : "Failed to send email!"}
-          severity={open ? "success" : "error"}
-        />
+        <Snackbar open={open} autoHideDuration={6000} onClose={() => setOpen(false)}>
+          <Alert onClose={() => setOpen(false)} severity={snackbarSeverity} sx={{ width: "100%" }}>
+            {snackbarMessage}
+          </Alert>
+        </Snackbar>
       </Wrapper>
     </Container>
   );
