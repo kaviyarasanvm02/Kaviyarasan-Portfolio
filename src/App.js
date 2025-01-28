@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from "react-router-dom";
 import { ParallaxProvider } from "react-scroll-parallax";
 import styled from "styled-components";
@@ -16,6 +16,7 @@ import Footer from "./components/Footer";
 import ScrollToTopButton from "./components/Footer/ScrollTopBtn";
 import ProjectDetails from "./components/ProjectDetails";
 import Certification from "./components/Certification";
+import DotLoader from "./components/Navbar/DotLoader";
 
 const Body = styled.div`
  background-color: ${({ theme}) => theme.bg};
@@ -41,37 +42,48 @@ const Wrapper = styled.div`
 
 function App() {
   const [openModal,setOpenModal] = useState({state:false,project: null});
-  return (
+  const [loading,setLoading] = useState(true);
 
-   <ThemeProvider theme={darkTheme}>
-    <ParallaxProvider>
-      <Router>
-        <Navbar/>
-        <Body>
-        <HeroSection />
-        <Wrapper>
-          <Skills/>
-          <Experience />
-        </Wrapper>
-        <Projects openModal={openModal} setOpenModal={setOpenModal}/>
-        <Wrapper>
-          <Education />
-          <Certification />
-          <Contact />
-        </Wrapper>
-        <Footer />
-        <ScrollToTopButton /> 
-        {openModal.state && (
-              <ProjectDetails
-                openModal={openModal}
-                setOpenModal={setOpenModal}
-              />
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  
+    return () => clearTimeout(timer); // Cleanup function
+  }, []);
+  
+  return loading ? (
+    <ThemeProvider theme={darkTheme}>
+      <DotLoader />
+    </ThemeProvider>
+  ) : (
+    <ThemeProvider theme={darkTheme}>
+      <ParallaxProvider>
+        <Router>
+          <Navbar />
+          <Body>
+            <HeroSection />
+            <Wrapper>
+              <Skills />
+              <Experience />
+            </Wrapper>
+            <Projects openModal={openModal} setOpenModal={setOpenModal} />
+            <Wrapper>
+              <Education />
+              <Certification />
+              <Contact />
+            </Wrapper>
+            <Footer />
+            <ScrollToTopButton />
+            {openModal.state && (
+              <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
             )}
-        </Body>
-      </Router>
-    </ParallaxProvider>
-   </ThemeProvider>
+          </Body>
+        </Router>
+      </ParallaxProvider>
+    </ThemeProvider>
   );
+  
 }
 
 export default App;
