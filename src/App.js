@@ -15,6 +15,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollToTopButton from "./components/Footer/ScrollTopBtn";
 import ProjectDetails from "./components/ProjectDetails";
+import Certification from "./components/Certification";
 
 const Body = styled.div`
  background-color: ${({ theme}) => theme.bg};
@@ -55,6 +56,7 @@ function App() {
         <Projects openModal={openModal} setOpenModal={setOpenModal}/>
         <Wrapper>
           <Education />
+          <Certification />
           <Contact />
         </Wrapper>
         <Footer />

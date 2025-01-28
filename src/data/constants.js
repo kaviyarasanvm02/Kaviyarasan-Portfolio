@@ -8,7 +8,8 @@ import pys from "../images/PYS -W.jpg";
 import deepan from "../images/Deepan-india.png";
 import nsmvps from "../images/NSMVPS.png";
 import alagappa from "../images/Alagappa_Logo.png";
-import canva from "../images/canva.svg"
+import canva from "../images/canva.svg";
+import jspiders from "../images/Jspiders.jpeg";
 
 export const Bio = {
     name: "Kaviyarasan V",
@@ -16,8 +17,7 @@ export const Bio = {
     description: 
        "As a Full Stack Developer with 1 years of hands-on experience, I specialize in JavaScript technologies, adept at customizing development environments and solving intricate technical challenges. At Cotyledon Technologies Pvt Ltd, I focused on product development and deployment, fueled by a strong passion for JavaScript and its frameworks. Skilled in both back-end and front-end aspects, I excel in team management and possess broad knowledge of developing and deploying web applications from scratch.",
     github: "https://github.com/kaviyarasanvm02",
-    resume:
-    "https://drive.google.com/file/d/1LOyK2OKFRe7Ywx6vZO4YdGNhrguMlWM5/view?usp=drive_link",
+    resume:"https://drive.google.com/file/d/1iWDMJNT_4LLFi7Skrvc2izJG7-to_e_e/view?usp=drive_link",
     linkedin: "https://www.linkedin.com/in/kaviyarasan-v-230287301/",
     X: "https://x.com/MassKavi5",
     instagram: "https://instagram.com/kaviyarasan.vm/",
@@ -139,6 +139,23 @@ export const experiences = [
     }
 ];
 
+export const certification = [
+  {
+    id: 0,
+    img : jspiders,
+    role : "Java FUll Stack Developement",
+    company : "JSpiders Basavanagudi",
+    date: "Oct 2022 - Jun 2023",
+    desc : "This intensive Full Stack Development course provided hands-on training in both frontend and backend technologies, covering the entire web development lifecycle. The course focused on real-world projects and industry best practices.",
+    skills : [
+      "java",
+      "HTML",
+      "CSS",
+      "Javascript"
+    ]
+  }
+];
+
 export const education = [
     {
         id:0,
@@ -168,6 +185,8 @@ export const education = [
         degree: "X",
       },
 ];
+
+
 
 export const projects = [
    
