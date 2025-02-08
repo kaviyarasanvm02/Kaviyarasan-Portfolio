@@ -1,5 +1,5 @@
 import React from "react";
-import { CardContainer, Container, Desc, SliderContainer, Title, Wrapper } from "./ProjectStyle";
+import { Container, Desc, SliderContainer, Title, Wrapper } from "./ProjectStyle";
 import ProjectCard from "../Cards/ProjectCard";
 import { projects } from "../../data/constants";
 import Slider from "react-slick";
@@ -8,22 +8,24 @@ import "slick-carousel/slick/slick-theme.css";
 
 const Projects = ({ openModal, setOpenModal }) => {
   const settings = {
-    dots: false, // Show navigation dots
-    infinite: true, // Infinite looping
-    speed: 500, // Animation speed
-    slidesToShow: 2, // Show 2 cards per slide
-    slidesToScroll: 1, // Scroll 1 card at a time
+    dots: false, 
+    infinite: true, 
+    speed: 500,
+    slidesToShow: 2, 
+    slidesToScroll: 1, 
+    autoplay: true, 
+    autoplaySpeed: 2000, 
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2, // 2 cards per slide on tablets
+          slidesToShow: 2, 
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1, // 1 card per slide on mobile
+          slidesToShow: 1, 
         },
       },
     ],

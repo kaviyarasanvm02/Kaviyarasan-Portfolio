@@ -33,8 +33,8 @@ const dotVariants = {
 const colors = ["#FF3B30", "#FFD60A", "#34C759"]; // Red, Yellow, Green (Apple-style)
 
 const Dot = styled(motion.div)`
-  width: 14px;
-  height: 14px;
+  width: 20px;
+  height: 20px;
   background-color: ${(props) => colors[props.index]}; /* Assign color dynamically */
   border-radius: 50%;
 `;
