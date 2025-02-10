@@ -29,9 +29,9 @@ const Navbar = () => {
               display: "flex",
               alignItems: "center",
               color: "white",
-              marginBottom: "20px", // Fixed the typo here (changed "20;" to "20px")
+              marginBottom: "20px",
               cursor: "pointer",
-              textDecoration: "none", // Optional: To remove default button styles
+              textDecoration: "none", 
               background: "none",
               border: "none",
             }}

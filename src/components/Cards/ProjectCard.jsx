@@ -121,7 +121,7 @@ const Avatar = styled.img`
 `
 
 const ProjectCards = ({project,setOpenModal}) => {
-  console.log("Projects Data: ", project);
+
 
   return (
     <Card onClick={() => setOpenModal({state:true, project:project})}>

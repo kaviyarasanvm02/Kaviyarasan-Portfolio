@@ -16,7 +16,7 @@ import vercel from "../images/Vercel_favicon.svg";
 import api from "../images/api.png";
 import response from "../images/responsive-design.png";
 import npm from "../images/programing.png";
-
+import jira from "../images/jira.png";
 export const Bio = {
     name: "Kaviyarasan V",
     roles: ["Front-End Developer", "React Js Developer", "Full Stack Developer"],
@@ -137,6 +137,10 @@ export const skills = [
           {
             name : "Vercel",
             image : vercel
+          },
+          {
+            name : "Jira",
+            image : jira
           },
           {
             name: "Canva",

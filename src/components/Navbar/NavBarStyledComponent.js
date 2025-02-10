@@ -59,6 +59,7 @@ export const NavItems = styled.ul`
     }
 `;
 
+
 export const NavLink = styled.a`
     color: ${({ theme }) => theme.text_primary};
     font-weight: 500;
@@ -73,6 +74,7 @@ export const NavLink = styled.a`
       border-bottom: 2px solid ${({ theme }) => theme.primary};
     }
 `;
+
 
 
 export const GitHubButton = styled.a`
