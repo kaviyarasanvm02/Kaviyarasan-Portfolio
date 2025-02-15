@@ -157,6 +157,7 @@ export const experiences = [
         role: "Full Stack Developer",
         company: "Cotyledon Technologies Pvt Ltd",
         date: "Apr 2024 - Present",
+        startDate: "2024-04-01",
         desc: "Full Stack Developer, Product Development, Product Deployment and Maintenance,Problem-Solving, User Interface Enhancement, Technical Assistance, Teamwork and Collaboration.",
         skills: [
           "ReactJS",
