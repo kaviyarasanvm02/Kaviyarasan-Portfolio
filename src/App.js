@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 import './App.css';
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";  // ✅ Import Routes
 import { ParallaxProvider } from "react-scroll-parallax";
 import styled from "styled-components";
 import { darkTheme } from "./utils/Themes";
@@ -17,11 +17,14 @@ import ScrollToTopButton from "./components/Footer/ScrollTopBtn";
 import ProjectDetails from "./components/ProjectDetails";
 import Certification from "./components/Certification";
 import DotLoader from "./components/Navbar/DotLoader";
+import HomePageBlog from "./components/Blog";
+import BlogDetails from "./components/Blog/BlogDetails";
+import Blog from "./components/Blog/Blog";
 
 const Body = styled.div`
- background-color: ${({ theme}) => theme.bg};
- width:100%;
- overflow-x : hidden;
+ background-color: ${({ theme }) => theme.bg};
+ width: 100%;
+ overflow-x: hidden;
 `;
 
 const Wrapper = styled.div`
@@ -39,10 +42,9 @@ const Wrapper = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 98%, 0 100%);
 `;
 
-
 function App() {
-  const [openModal,setOpenModal] = useState({state:false,project: null});
-  const [loading,setLoading] = useState(true);
+  const [openModal, setOpenModal] = useState({ state: false, project: null });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -62,19 +64,34 @@ function App() {
         <Router>
           <Navbar />
           <Body>
-            <HeroSection />
-            <Wrapper>
-              <Skills />
-              <Experience />
-            </Wrapper>
-            <Projects openModal={openModal} setOpenModal={setOpenModal} />
-            <Wrapper>
-              <Education />
-              <Certification />
-              <Contact />
-            </Wrapper>
+            <Routes>  {/* ✅ Wrap all routes inside <Routes> */}
+              <Route path="/" element={
+                <>
+                  <HeroSection />
+                  <Wrapper>
+                    <Skills />
+                    <Experience />
+                  </Wrapper>
+                  <Projects openModal={openModal} setOpenModal={setOpenModal} />
+                  <Wrapper>
+                    <Education />
+                    <Certification />
+                    <HomePageBlog />
+                    <br />
+                    <br />
+                    <br />
+                  </Wrapper>
+                  <Contact />
+                </>
+              } />
+                <Route path="/blog" element={<Blog />} />
+              <Route path="/blog-details/:id" element={<BlogDetails />} />  {/* ✅ Blog details page */}
+              
+            </Routes>
+
             <Footer />
             <ScrollToTopButton />
+
             {openModal.state && (
               <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
             )}
@@ -83,7 +100,6 @@ function App() {
       </ParallaxProvider>
     </ThemeProvider>
   );
-  
 }
 
 export default App;

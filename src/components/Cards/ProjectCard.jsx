@@ -18,7 +18,7 @@ const Button = styled.button`
 const Card = styled.div`
   width: 100%; /* Makes each card span full width */
   max-width: 800px; /* Limits the width for readability */
-  height: auto;
+  height: 470px;
   background-color: ${({ theme }) => theme.card};
   border-radius: 10px;
   box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
@@ -28,6 +28,8 @@ const Card = styled.div`
   flex-direction: column;
   gap: 14px;
   transition: all 0.5s ease-in-out;
+  justify-content: space-between;
+  margin-bottom: 20px; 
 
   &:hover {
     transform: translateY(-5px);

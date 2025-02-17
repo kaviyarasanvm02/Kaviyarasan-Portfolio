@@ -17,6 +17,13 @@ import api from "../images/api.png";
 import response from "../images/responsive-design.png";
 import npm from "../images/programing.png";
 import jira from "../images/jira.png";
+import react from "../images/react-blog.jpg";
+import css from "../images/css-blog.webp";
+import typeScript from "../images/typescrip-blog.webp";
+import nodejs from "../images/NodeJs-Debug-min.png";
+import javascript from "../images/Js-blog.png";
+import socketio from "../images/socket-blog.png";
+
 export const Bio = {
     name: "Kaviyarasan V",
     roles: ["Front-End Developer", "React Js Developer", "Full Stack Developer"],
@@ -28,6 +35,7 @@ export const Bio = {
     X: "https://x.com/MassKavi5",
     instagram: "https://instagram.com/kaviyarasan.vm/",
 };
+
 
 export const skills = [
     {
@@ -301,6 +309,60 @@ export const projects = [
       webapp: "https://deepanindiaevery.web.app/",
     },
   ];
+
+  export const blogData = [
+    {
+      id: 1,
+      title: "Getting Started with React",
+      description: "Learn the basics of React and how to build your first application. React is a JavaScript library for building user interfaces. It's declarative, efficient, and flexible. React allows developers to create large web applications that can change data, without reloading the page. In this blog, we cover essential concepts such as JSX, components, props, and state management. With React's component-based architecture, you can easily reuse code and manage the UI. React's ecosystem also offers powerful tools like React Router for navigation, and Redux for state management.",
+      date: "17-02-2025",
+      tags: "React, JavaScript, Frontend",
+      image: react
+    },
+    {
+      id: 2,
+      title: "Mastering CSS Grid",
+      description: "A comprehensive guide to mastering CSS Grid for modern web layouts. CSS Grid is a two-dimensional layout system that makes it easy to design complex web layouts. Unlike Flexbox, which is one-dimensional, CSS Grid gives you more control over both rows and columns. In this blog, we dive deep into creating grid containers and grid items, defining rows and columns, and managing the alignment and placement of elements. You'll also learn how to create responsive layouts, nested grids, and how to use grid gaps to space elements efficiently. CSS Grid is a must-learn for modern web development and will help you create beautiful and scalable web designs.",
+      date: "18-02-2025",
+      tags: "CSS, Web Design, Frontend",
+      image: css
+    },
+    {
+      id: 3,
+      title: "Introduction to TypeScript",
+      description: "TypeScript is a strongly typed superset of JavaScript that enhances code reliability and developer productivity. It introduces static typing, which helps catch errors at compile time rather than at runtime. With features like interfaces, generics, and type inference, TypeScript makes code more structured and easier to maintain. It seamlessly integrates with JavaScript, allowing gradual adoption in existing projects. TypeScript supports modern ES6+ features, ensuring compatibility with the latest JavaScript advancements. It enhances code readability and scalability, making it ideal for large applications. With rich IntelliSense support, developers benefit from better autocompletion and documentation. TypeScript also enables safer refactoring, reducing the risk of introducing bugs. It is widely used in React, Angular, and Node.js projects. Overall, TypeScript boosts development efficiency and software reliability, making it an invaluable tool for large-scale projects and team collaboration. 🚀",
+      date: "19-02-2025",
+      tags: "TypeScript, JavaScript, Frontend",
+      image: typeScript
+    },
+    {
+      id: 4,
+      title: "Understanding Node.js and Express.js",
+      description: "Node.js is a runtime environment that allows you to execute JavaScript code server-side. With its event-driven, non-blocking I/O model, Node.js is designed to build scalable and high-performance applications. Express.js is a minimal web framework built on top of Node.js that simplifies routing and server-side logic. In this blog, we explore how to set up a Node.js server, create RESTful APIs with Express.js, and handle HTTP requests and responses. We also cover best practices like middleware, error handling, and secure routing. This blog is a great introduction to server-side development with JavaScript.",
+      date: "20-02-2025",
+      tags: "Node.js, Express.js, Backend",
+      image: nodejs
+    },
+    {
+      id: 5,
+      title: "Advanced JavaScript Concepts You Should Know",
+      description: "JavaScript is a versatile language with many advanced concepts that can make your code more efficient and maintainable. This blog covers topics such as closures, higher-order functions, promises, async/await, the 'this' keyword, and more. We explain how closures allow functions to access variables from their parent scope, and how higher-order functions can be used to create reusable code. You'll also learn how to handle asynchronous code with promises and async/await, which helps to prevent callback hell. Understanding these advanced concepts will help you become a more efficient JavaScript developer and write cleaner, more scalable code.",
+      date: "21-02-2025",
+      tags: "JavaScript, Advanced, Programming",
+      image: javascript
+    },
+    {
+      id: 6,
+      title: "Building a Real-Time Chat Application with Socket.io",
+      description: "Real-time communication is an essential feature in modern web applications, and Socket.io makes it easy to implement WebSockets for bi-directional communication. In this blog, we walk through the process of building a real-time chat application using Node.js and Socket.io. We cover how to set up a basic Node.js server, establish a WebSocket connection with Socket.io, and create chat rooms where users can send and receive messages in real time. We also discuss topics like broadcasting messages to all clients, managing user connections, and adding basic UI features with HTML and CSS. This is a great project for learning how to handle real-time communication on the web.",
+      date: "22-02-2025",
+      tags: "Node.js, Socket.io, Real-time, Web Development",
+      image: socketio
+    },
+
+  ];
+  
+
 
   export const TimeLineData = [
     { year: 2022, text: "Started my journey" },

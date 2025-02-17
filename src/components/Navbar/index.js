@@ -16,14 +16,37 @@ import { DiCssdeck } from "react-icons/di";
 import { FaBars } from "react-icons/fa";
 import { Bio } from "../../data/constants";
 import { useTheme } from "styled-components";
+import { Link, useLocation } from "react-router-dom"; // Import useLocation
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const theme = useTheme();
+  const location = useLocation(); // Get the current location
+
+  const handleLogoClick = () => {
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Function to handle navigation with hash
+  const handleHashNavigation = (hash) => {
+    if (location.pathname === "/") {
+      // If already on the home page, scroll to the section
+      const section = document.querySelector(hash);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If not on the home page, navigate to the home page with the hash
+      window.location.href = `/${hash}`;
+    }
+    setIsOpen(false); // Close the mobile menu
+  };
+
   return (
     <Nav>
       <NavbarContainer>
-        <NavLogo to="/">
+        <NavLogo to="/" onClick={handleLogoClick}>
           <button
             style={{
               display: "flex",
@@ -31,7 +54,7 @@ const Navbar = () => {
               color: "white",
               marginBottom: "20px",
               cursor: "pointer",
-              textDecoration: "none", 
+              textDecoration: "none",
               background: "none",
               border: "none",
             }}
@@ -47,12 +70,27 @@ const Navbar = () => {
           />
         </MobileIcon>
         <NavItems>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#skills">Skills</NavLink>
-          <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#projects">Projects</NavLink>
-          <NavLink href="#education">Education</NavLink>
-          <NavLink href="#certification">Certification</NavLink>
+          <NavLink as={Link} to="/#about" onClick={() => handleHashNavigation("#about")}>
+            About
+          </NavLink>
+          <NavLink as={Link} to="/#skills" onClick={() => handleHashNavigation("#skills")}>
+            Skills
+          </NavLink>
+          <NavLink as={Link} to="/#experience" onClick={() => handleHashNavigation("#experience")}>
+            Experience
+          </NavLink>
+          <NavLink as={Link} to="/#projects" onClick={() => handleHashNavigation("#projects")}>
+            Projects
+          </NavLink>
+          <NavLink as={Link} to="/#education" onClick={() => handleHashNavigation("#education")}>
+            Education
+          </NavLink>
+          <NavLink as={Link} to="/#certification" onClick={() => handleHashNavigation("#certification")}>
+            Certification
+          </NavLink>
+          <NavLink as={Link} to="/blog">
+            Blog
+          </NavLink>
         </NavItems>
         <ButtonContainer>
           <GitHubButton href={Bio.github} target="_blank">
@@ -61,53 +99,26 @@ const Navbar = () => {
         </ButtonContainer>
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
-            <MobileLink
-              href="#about"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
+            <MobileLink as={Link} to="/#about" onClick={() => handleHashNavigation("#about")}>
               About
             </MobileLink>
-            <MobileLink
-              href="#skills"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
+            <MobileLink as={Link} to="/#skills" onClick={() => handleHashNavigation("#skills")}>
               Skills
             </MobileLink>
-            <MobileLink
-              href="#experience"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
+            <MobileLink as={Link} to="/#experience" onClick={() => handleHashNavigation("#experience")}>
               Experience
             </MobileLink>
-            <MobileLink
-              href="#projects"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
+            <MobileLink as={Link} to="/#projects" onClick={() => handleHashNavigation("#projects")}>
               Projects
             </MobileLink>
-            <MobileLink
-              href="#education"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
+            <MobileLink as={Link} to="/#education" onClick={() => handleHashNavigation("#education")}>
               Education
             </MobileLink>
-            <MobileLink
-              href="#certification"
-              onClick={() => {
-                setIsOpen(!isOpen);
-              }}
-            >
+            <MobileLink as={Link} to="/#certification" onClick={() => handleHashNavigation("#certification")}>
               Certification
+            </MobileLink>
+            <MobileLink as={Link} to="/blog" onClick={() => setIsOpen(false)}>
+              Blog
             </MobileLink>
             <GitHubButton
               style={{
