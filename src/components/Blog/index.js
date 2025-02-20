@@ -146,17 +146,17 @@ const HomePageBlog = () => {
   sx={{
     mt: 4,
     textTransform: "capitalize",
-    backgroundColor: "#7b64a7", // You can choose a stronger color if needed
+    backgroundColor: "#7b64a7", 
     color: "#fff",
-    padding: "12px 24px",  // Add more padding to make the button larger
-    borderRadius: "5px",  // Slightly rounded corners
-    fontWeight: "bold",  // Make the text stand out
-    fontSize: "1rem",  // Increase font size for better visibility
+    padding: "12px 24px",  
+    borderRadius: "5px",  
+    fontWeight: "bold",  
+    fontSize: "1rem",  
     "&:hover": {
-      backgroundColor: "#18182e", // Darker hover color for better contrast
-      transform: "scale(1.05)",  // Slight scale on hover for interactive feel
+      backgroundColor: "#18182e", 
+      transform: "scale(1.05)",  
     },
-    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",  // Add some shadow to make it pop
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",  
   }}
   onClick={() => navigate("/blog")}
 >
