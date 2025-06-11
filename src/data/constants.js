@@ -26,7 +26,7 @@ import socketio from "../images/socket-blog.png";
 
 export const Bio = {
     name: "Kaviyarasan V",
-    roles: ["Front-End Developer", "React Js Developer", "Full Stack Developer"],
+    roles: ["Front-End Developer", "React Js Developer", "Full-Stack Developer"],
     description: 
        "As a Full Stack Developer with 1 years of hands-on experience, I specialize in JavaScript technologies, adept at customizing development environments and solving intricate technical challenges. At Cotyledon Technologies Pvt Ltd, I focused on product development and deployment, fueled by a strong passion for JavaScript and its frameworks. Skilled in both back-end and front-end aspects, I excel in team management and possess broad knowledge of developing and deploying web applications from scratch.",
     github: "https://github.com/kaviyarasanvm02",
