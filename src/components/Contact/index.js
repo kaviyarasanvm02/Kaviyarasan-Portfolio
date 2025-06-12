@@ -150,10 +150,10 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        "service_63rmbph",
-        "template_86d2k5s",
+        "service_gdicdeg",
+        "template_vm1mm6t",
         form.current,
-        "vt_M5x9Rq2KkUlnmG"
+        "XbP6UZhBGmE1dzh3U"
       );
       setSnackbarMessage("Email sent successfully!");
       setSnackbarSeverity("success");
